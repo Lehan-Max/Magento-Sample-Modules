@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="codilar" translate="label" sortOrder="10">
+            <label>Codilar</label>
+        </tab>
+        <section id="codilar_contactus" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Contact Us</label>
+            <tab>codilar</tab>
+            <resource>Codilar_OrderSearch::codilar_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="subject" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Contact Us Subject</label>
+                    <comment>This is a comma separated text which is displayed as options to select in fronted.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

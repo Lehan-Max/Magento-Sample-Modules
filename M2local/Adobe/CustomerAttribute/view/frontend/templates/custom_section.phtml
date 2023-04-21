@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © Lehan, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<div class="adobe-custom-section" data-bind="scope: 'section'">
+    <p data-bind="text: customsection().customdata"></p>
+</div>
+<script type="text/x-magento-init">
+    {
+    	"*": {
+        	"Magento_Ui/js/core/app": {
+            	"components": {
+                	"section": {
+                    	"component": "Adobe_CustomerAttribute/js/section"
+                	}
+            	}
+        	}
+    	}
+    }
+</script>

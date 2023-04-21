@@ -1,0 +1,13 @@
+<?php
+/**
+ * Copyright © Lehan, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /** @var \Magento\Framework\View\Element\Template $block */ ?>
+<div>
+    <strong><?php
+               $viewModel = $block->getData('view_model');
+               echo $viewModel->getMessage();
+            ?></strong>
+</div>

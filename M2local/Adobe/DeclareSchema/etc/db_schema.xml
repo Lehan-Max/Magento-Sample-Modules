@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Lehan, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    +    <table name="declarative_table">
+    +        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>
+    +        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>
+    +        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+    +        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>
+    +        <constraint xsi:type="primary" referenceId="PRIMARY">
+    +            <column name="id_column"/>
+    +        </constraint>
+    +    </table>
+
+
+<!--    For Deleting the Table we need keep as disable="false"-->
+
+
+<!--        -    <table name="declarative_table">-->
+<!--        -        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>-->
+<!--        -        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>-->
+<!--        -        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>-->
+<!--        -        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>-->
+<!--        -        <constraint xsi:type="primary" referenceId="PRIMARY">-->
+<!--        -            <column name="id_column"/>-->
+<!--        -        </constraint>-->
+<!--        -    </table>-->
+
+
+<!--        +    <table name="new_declarative_table" onCreate="migrateDataFromAnotherTable(declarative_table)" />-->
+<!--        -    <table name="declarative_table">-->
+<!--        <column xsi:type="int" name="id_column" unsigned="true" nullable="false" comment="Entity Id"/>-->
+<!--        <column xsi:type="int" name="severity" unsigned="true" nullable="false" comment="Severity code"/>-->
+<!--        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>-->
+<!--        <column xsi:type="timestamp" name="time_occurred" comment="Time of event"/>-->
+<!--        <constraint xsi:type="primary" referenceId="PRIMARY">-->
+<!--            <column name="id_column"/>-->
+<!--        </constraint>-->
+<!--    </table>-->
+
+</schema>

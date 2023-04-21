@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Codilar\ContactUs\Api\ContactusRepositoryInterface" type="Codilar\ContactUs\Model\ContactusRepository"/>
+    <preference for="Codilar\ContactUs\Api\Data\ContactusInterface" type="Codilar\ContactUs\Model\ContactUs"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="contactus_listing_data_source" xsi:type="string">
+                    Codilar\ContactUs\Model\ResourceModel\Contactus\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Contact\Controller\Index\Post">
+        <plugin name="contact_us_data_save" type="Codilar\ContactUs\Plugin\Controller\Index\Post" sortOrder="10" disabled="false"  />
+    </type>
+    <preference for="Magento\Contact\Block\ContactForm" type="Codilar\ContactUs\Preference\Block\ContactForm" />
+</config>

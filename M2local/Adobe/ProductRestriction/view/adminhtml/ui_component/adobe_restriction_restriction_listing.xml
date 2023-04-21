@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<!--****************************************************************************
+  * ADOBE CONFIDENTIAL
+  * ___________________
+  *
+  * Copyright 2022 Adobe
+  * All Rights Reserved.
+  *
+  * NOTICE: All information contained herein is, and remains
+  * the property of Adobe and its suppliers, if any. The intellectual
+  * and technical concepts contained herein are proprietary to Adobe
+  * and its suppliers and are protected by all applicable intellectual
+  * property laws, including trade secret and copyright laws.
+  * Adobe permits you to use and modify this file
+  * in accordance with the terms of the Adobe license agreement
+  * accompanying it (see LICENSE_ADOBE_PS.txt).
+  * If you have received this file from a source other than Adobe,
+  * then your use, modification, or distribution of it
+  * requires the prior written permission from Adobe.
+  ***************************************************************************-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">adobe_restriction_restriction_listing.adobe_restriction_restriction_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="adobe_restriction/restriction/edit"/>
+                <class>primary</class>
+                <label translate="true">Add Product Restriction</label>
+            </button>
+        </buttons>
+        <spinner>adobe_restriction_restriction_columns</spinner>
+        <deps>
+            <dep>adobe_restriction_restriction_listing.adobe_restriction_restriction_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="adobe_restriction_restriction_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Adobe_ProductRestriction::restriction</aclResource>
+        <dataProvider class="Adobe\ProductRestriction\Ui\DataProvider\Restriction\DataProvider" name="adobe_restriction_restriction_listing_data_source">
+            <settings>
+                <requestFieldName>restriction_id</requestFieldName>
+                <primaryFieldName>restriction_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <filters name="listing_filters" />
+        <paging name="listing_paging" />
+    </listingToolbar>
+    <columns name="adobe_restriction_restriction_columns">
+        <settings>
+            <dndConfig>
+                <param name="enabled" xsi:type="boolean">false</param>
+            </dndConfig>
+        </settings>
+        <column name="restriction_id" sortOrder="10">
+            <settings>
+                <filter>text</filter>
+                <sorting>asc</sorting>
+                <label translate="true">ID</label>
+            </settings>
+        </column>
+        <column name="sku" sortOrder="20">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">SKU</label>
+            </settings>
+        </column>
+        <column name="country_id" sortOrder="30">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Country</label>
+            </settings>
+        </column>
+        <column name="region_code" sortOrder="40">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Region</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

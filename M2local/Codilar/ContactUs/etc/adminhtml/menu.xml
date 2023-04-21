@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+            id="Codilar_ContactUs::ContactUs_Menu"
+             title="ContactUS Menu"
+             module="Codilar_ContactUs"
+             sortOrder="20"
+             resource="Codilar_ContactUs::ContactUs_Menu"
+        />
+        <add
+            id="Codilar_ContactUs::ContactUs_Details"
+            title="ContactUs Information"
+            module="Codilar_ContactUs"
+            sortOrder="2"
+            action="contactus/contactus/index"
+            resource="Codilar_ContactUs::ContactUs_Details"
+            parent="Codilar_ContactUs::ContactUs_Menu"
+        />
+    </menu>
+</config>

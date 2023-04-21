@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Lehan, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="customer_record">
+        <column xsi:type="int" name="id" padding="10" identity="true" nullable="false" comment="ID" />
+        <column xsi:type="varchar" name="name" length="100" nullable="false" comment="Customer Name" />
+        <column xsi:type="varchar" name="email" length="100" nullable="false" comment="Customer Email" />
+        <column xsi:type="int" name="phone" padding="10" nullable="true" comment="Customer Phone" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+    </table>
+</schema>

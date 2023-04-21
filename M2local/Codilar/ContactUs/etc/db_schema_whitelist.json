@@ -1,0 +1,16 @@
+{
+    "codilar_contact_us": {
+        "column": {
+            "contact_id": true,
+            "name": true,
+            "email": true,
+            "phone": true,
+            "subject": true,
+            "message": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

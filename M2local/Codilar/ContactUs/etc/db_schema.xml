@@ -1,0 +1,14 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="codilar_contact_us" resource="default" comment="Codilar OMS Api Log">
+        <column xsi:type="int" name="contact_id" padding="10" identity="true" unsigned="true" nullable="false" comment="Contact Id"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="128" comment="Name"/>
+        <column xsi:type="varchar" name="email" nullable="false" length="255" comment="Email"/>
+        <column xsi:type="varchar" name="phone" nullable="false" length="255" comment="Phone"/>
+        <column xsi:type="varchar" name="subject" nullable="false" length="255" comment="Subject"/>
+        <column xsi:type="varchar" name="message" nullable="false" length="255" comment="Message"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="contact_id"/>
+        </constraint>
+    </table>
+</schema>
